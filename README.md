@@ -28,3 +28,19 @@ You can check out [the Next.js GitHub repository](https://github.com/zeit/next.j
 The easiest way to deploy your Next.js app is to use the [ZEIT Now Platform](https://zeit.co/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## To switch ports
+
+https://stackoverflow.com/questions/60147499/how-set-port-in-next-js
+
+```
+    "scripts": {
+        "dev": "next -p 8080",
+        // "dev": "next dev",
+
+    },
+```
+
+## GraphQL
+
+http://localhost:8080/api/graphql

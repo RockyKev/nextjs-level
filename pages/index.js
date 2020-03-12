@@ -9,8 +9,18 @@ const HELLO_QUERY = gql`
   }
 `;
 
+const REDDIT_QUERY = gql`
+  query HelloQuery {
+    reddit {
+      subreddit(name: "bboy") {
+        subscribers
+      }
+    }
+  }
+`;
+
 const Home = () => {
-  const { data, loading, error } = useQuery(HELLO_QUERY);
+  const { data, loading, error } = useQuery(REDDIT_QUERY);
 
   if (loading) return <div />;
 
@@ -20,11 +30,9 @@ const Home = () => {
     <Layout>
       <div className="hero">
         <h1 className="title">{data.sayHello}</h1>
-        <p className="description">
-          To get started, edit <code>pages/index.js</code> and save to reload.
-        </p>
+        {/* <h1 className="title">{data.reddit.subreddit.subscribers}</h1> */}
 
-        <div className="row">
+        {/* <div className="row">
           <a href="https://nextjs.org/docs" className="card">
             <h3>Documentation &rarr;</h3>
             <p>Learn more about Next.js in the documentation.</p>
@@ -40,7 +48,7 @@ const Home = () => {
             <h3>Examples &rarr;</h3>
             <p>Find other example boilerplates on the Next.js GitHub.</p>
           </a>
-        </div>
+        </div> */}
       </div>
 
       <style jsx>{`

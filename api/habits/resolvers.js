@@ -1,6 +1,6 @@
 export const habitsResolvers = {
   Query: {
-    async Habits() {
+    async habits() {
       console.log("habits resolver");
       return [
         {

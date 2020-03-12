@@ -44,3 +44,10 @@ https://stackoverflow.com/questions/60147499/how-set-port-in-next-js
 ## GraphQL
 
 http://localhost:8080/api/graphql
+
+//How to access a env File.
+// console.log(process.env.MONGO_URL);
+
+## Mongo
+
+leveluptuts123

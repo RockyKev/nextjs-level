@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { useMutation } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 
@@ -28,26 +27,47 @@ const REMOVE_EVENT = gql`
   }
 `;
 
-const HabitButton = ({ date }) => {
-  // const [complete, setComplete] = useState(false);
+//LAST PLACE: https://www.leveluptutorials.com/tutorials/fullstack-react-with-nextjs/error-states --> 416 on the clock
+
+const HabitButton = ({ date, habitId }) => {
+  const [addEvent] = useMutation(ADD_EVENT, {
+    refetchQueries: ["getHabits"]
+  });
+
+  const [removeEvent] = useMutation(REMOTE_EVENT, {
+    refetchQueries: ["getHabits"]
+  });
+
+  const found = false;
 
   return (
     <span>
       {date.getMonth() + 1}/{date.getDate()}
-      <button onClick={() => setComplete(!complete)}>
-        {complete ? "X" : "O"}
-      </button>
+      {found ? (
+        <button
+          onClick={() =>
+            removeEvent({
+              variables: {
+                habitId,
+                eventId: "asdfdsasfsf"
+              }
+            })
+          }
+        >
+          X
+        </button>
+      ) : (
+        <button onClick={() => setComplete(!complete)}>O</button>
+      )}
       <style jsx>
         {`
           span {
             display: flex;
             flex-direction: column;
           }
-
           span + span {
             margin-left: 10px;
           }
-
           button {
             margin-top: 1rem;
             border: none;

@@ -1,5 +1,6 @@
+//Node style
 const { parsed: localEnv } = require("dotenv").config();
-const webpack = require("webpack");
+const webpack = require("webpack"); //nextJS uses webpack under the hood
 
 module.exports = {
   webpack(config) {

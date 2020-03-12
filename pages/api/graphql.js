@@ -1,4 +1,5 @@
-import { ApolloServer, gql } from 'apollo-server-micro';
+import { ApolloServer, gql } from "apollo-server-micro";
+import "../../lib/mongoose";
 
 const typeDefs = gql`
   type Query {
@@ -9,7 +10,7 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     sayHello: () => {
-      return 'Hello Level Up!';
+      return "Hello Level Up!";
     }
   }
 };
@@ -22,4 +23,4 @@ export const config = {
   }
 };
 
-export default apolloServer.createHandler({ path: '/api/graphql' });
+export default apolloServer.createHandler({ path: "/api/graphql" });

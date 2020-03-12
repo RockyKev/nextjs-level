@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { useQuery } from "@apollo/react-hooks";
 import gql from "graphql-tag";
 
@@ -26,7 +26,7 @@ const HELLO_QUERY = gql`
 
 const Home = () => {
   const { data, loading, error } = useQuery(HELLO_QUERY);
-  const [habits, setHabits] = useState(["Do the dishes"]);
+  // const [habits, setHabits] = useState(["Do the dishes"]);
 
   if (loading) return <div />;
 
@@ -39,9 +39,9 @@ const Home = () => {
         {/* <h1 className="title">{data.reddit.subreddit.subscribers}</h1> */}
         <div className="list"></div>
 
-        <HabitForm setHabits={setHabits} />
+        <HabitForm />
 
-        <HabitList habits={habits} />
+        <HabitList />
       </div>
 
       <style jsx>{`

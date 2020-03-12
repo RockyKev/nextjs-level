@@ -1,5 +1,5 @@
-import Head from 'next/head';
-import Nav from './nav';
+import Head from "next/head";
+import Nav from "./nav";
 
 const Layout = ({ children }) => {
   return (
@@ -9,7 +9,14 @@ const Layout = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
-      <main>{children}</main>
+      <main className="butts">{children}</main>
+
+      <style jsx>{`
+        main {
+          margin: 0 50px;
+          background-color: red;
+        }
+      `}</style>
     </div>
   );
 };

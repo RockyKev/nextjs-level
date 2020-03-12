@@ -47,7 +47,6 @@ const Home = () => {
       <style jsx>{`
         .hero {
           width: 100%;
-          padding: 0px 200px;
           color: #333;
         }
         .title {
@@ -61,11 +60,6 @@ const Home = () => {
         .description {
           text-align: center;
         }
-
-        button {
-          border: 2px solid black;
-        }
-
         .list {
           max-width: 600px;
           margin: 0 auto;

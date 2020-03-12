@@ -9,7 +9,7 @@ const Habit = ({ habit, index }) => {
 
   return (
     <article>
-      <h3 style={{ borderColors: colors[index] }}>{habit}</h3>
+      <h3 style={{ borderColors: colors[index] }}>{habit.name}</h3>
       <div className="buttons">
         {dates.map(date => (
           <HabitButton key={date.getTime()} date={date} />
